@@ -37,6 +37,8 @@ def compare_month_and_date(mnt: str, dte: int, yr: str, nm: str) -> int:
         assign_to_database(dte, mnt, nm)
     elif mnt == 'Feb' and yr == "it's not a leap year" and dte in range(1, 29):
         assign_to_database(dte, mnt, nm)
+    elif mnt == 'Feb' and yr == "it's not a leap year" and dte == 29:
+        print("i'm so sorry your birthday isn't this year, it's not a leap year")
     else:
         print("your date and month doesn't correlate")
         return dte
@@ -98,6 +100,7 @@ while True:
         print("we don't have that name in the database, why don't we change that")
         data = get_birthday(name)
         if isinstance(data, int):
+            print("re enter your data, this time correctly")
             rerun_data = get_birthday(name)
         else:
             break
